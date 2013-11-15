@@ -657,6 +657,7 @@ if(typeof global.interface === 'undefined') { // only run if not reloading...
           server.name = 'livecode';
         }else{
           server.webServer = connect()
+          .use( function(req, res) { res.end( global.interface.livecodePage ) })
         //    .use( connect.directory( server.directory, { hidden:true,icons:true } ) )
             .use( server.serveInterfaceJS )
          //   .use( connect.static( server.directory ) )
