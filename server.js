@@ -657,9 +657,9 @@ if(typeof global.interface === 'undefined') { // only run if not reloading...
           server.name = 'livecode';
         }else{
           server.webServer = connect()
-            .use( connect.directory( server.directory, { hidden:true,icons:true } ) )
+        //    .use( connect.directory( server.directory, { hidden:true,icons:true } ) )
             .use( server.serveInterfaceJS )
-            .use( connect.static( server.directory ) )
+         //   .use( connect.static( server.directory ) )
             .listen( server.webServerPort );
         }
         global.interface.portsInUse.push( server.webServerPort );
